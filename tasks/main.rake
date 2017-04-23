@@ -5,7 +5,8 @@ require_relative '../downloader/downloader'
 desc 'Решение тестовых задач'
 
 namespace :tasks do
-  desc 'Выкачивание файлов изображений с переданного url'
+  desc '1) Выкачивание изображений. ' \
+  ' Пример : rake tasks:download_image"[http://hamster.ru]"'
   task :download_image, [:url] do |t, args|
     url = args[:url] || nil
     if url
