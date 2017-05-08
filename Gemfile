@@ -6,3 +6,4 @@ gem 'pry'
 gem 'pry-byebug'
 gem 'nokogiri'
 gem 'progress_bar'
+
