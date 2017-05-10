@@ -56,7 +56,7 @@ namespace :tasks do
     puts "ruby core procedure = |#{result2}"
   end
 
-  desc 'Расчёт общей суммы долга и суммы частичного погашегния (без копеек)'
+  desc '8) Расчёт общей суммы долга и суммы частичного погашегния (без копеек)'
   task :banking do
     Banking::CalculationDebt.new(10000, 6, 1, 3).execute
     Banking::CalculationDebt.new(10000, 10, 0, 2).execute
