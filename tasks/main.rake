@@ -6,6 +6,7 @@ require_relative '../downloader/downloader'
 require_relative '../algorithm/search'
 require_relative '../algorithm/concat_list'
 require_relative '../sqlite/select_users'
+require_relative '../banking/calculation_debt'
 
 desc 'Решение тестовых задач'
 
@@ -53,6 +54,14 @@ namespace :tasks do
     puts '-------------------------------------------------------------------'
     puts "custom procedure    = |#{result1}"
     puts "ruby core procedure = |#{result2}"
+  end
+
+  desc 'Расчёт общей суммы долга и суммы частичного погашегния (без копеек)'
+  task :banking do
+    Banking::CalculationDebt.new(10000, 6, 1, 3).execute
+    Banking::CalculationDebt.new(10000, 10, 0, 2).execute
+    Banking::CalculationDebt.new(20000, 12, 2, 4).execute
+    Banking::CalculationDebt.new(30000, 16, 3, 8).execute
   end
 
 end
